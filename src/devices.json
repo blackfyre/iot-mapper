@@ -1,0 +1,18 @@
+[
+    {
+        "wirelessConnectivity": [
+            "Zigbee"
+        ],
+        "category": [
+            "Input",
+            "Actor"
+        ],
+        "meta": {
+            "name": "Valena Life 1 Gang wired switch",
+            "manufacturer": "Legrand",
+            "family": "Netatmo",
+            "retrofit": true,
+            "SKU": "3414971154254"
+        }
+    }
+]

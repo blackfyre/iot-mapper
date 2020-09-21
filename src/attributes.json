@@ -1,0 +1,88 @@
+{
+  "$id": "https://example.com/person.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "IoT Device",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "wirelessConnectivity": {
+      "type": "string",
+      "description": "Wireless connection protocolls supported",
+      "enum": [
+        "WiFi",
+        "Zigbee",
+        "Z-Wave",
+        "Jeweler",
+        "RF 433 MHz"
+      ]
+    },
+    "wiredConnectivity": {
+      "type": "string",
+      "description": "Wired connection protocolls supported",
+      "enum": [
+        "UTP",
+        "KNX Bus"
+      ]
+    },
+    "category": {
+      "type": "array",
+      "description": "Categorical classification of the item",
+      "minitems": 1,
+      "items": {
+        "type": "string",
+        "enum": [
+          "HUB",
+          "Input",
+          "Actor"
+        ]
+      }
+    },
+    "meta": {
+      "description": "Meta description of the item",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "manufacturer": {
+          "type": "string",
+          "description": "The manufacturer of the item"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the item"
+        },
+        "family": {
+          "type": "string",
+          "description": "The product family of the item"
+        },
+        "retrofit": {
+          "type": "boolean",
+          "default": false,
+          "description": "Is the item optimized for retrofit?"
+        },
+        "SKU": {
+          "type": "string",
+          "description": "The SKU/EAN number of the item"
+        },
+        "rebrandOf": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The list of product SKU numbers the item is directly related to (usually OEM products)"
+          }
+        },
+        "images": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Image url of the product"
+          }
+        }
+      },
+      "required": [
+        "SKU",
+        "manufacturer",
+        "name"
+      ]
+    }
+  }
+}
