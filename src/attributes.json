@@ -6,23 +6,41 @@
   "additionalProperties": false,
   "properties": {
     "wirelessConnectivity": {
-      "type": "string",
+      "type": "array",
       "description": "Wireless connection protocolls supported",
-      "enum": [
-        "WiFi",
-        "Zigbee",
-        "Z-Wave",
-        "Jeweler",
-        "RF 433 MHz"
-      ]
+      "items": {
+        "type": "string",
+        "enum": [
+          "WiFi",
+          "Zigbee",
+          "Z-Wave",
+          "Jeweler",
+          "RF 433 MHz"
+        ]
+      }
     },
     "wiredConnectivity": {
-      "type": "string",
+      "type": "array",
       "description": "Wired connection protocolls supported",
-      "enum": [
-        "UTP",
-        "KNX Bus"
-      ]
+      "items": {
+        "type": "string",
+        "enum": [
+          "UTP",
+          "KNX Bus"
+        ]
+      }
+    },
+    "supportedProtocols": {
+      "type": "array",
+      "description": "Supported communication protocols between systems",
+      "items": {
+        "type": "string",
+        "enum": [
+          "MQTT",
+          "HomeKit",
+          "COAP"
+        ]
+      }
     },
     "category": {
       "type": "array",
@@ -72,9 +90,18 @@
         },
         "images": {
           "type": "array",
+          "description": "Images of the product",
           "items": {
             "type": "string",
             "description": "Image url of the product"
+          }
+        },
+        "sites": {
+          "type": "array",
+          "description": "Sites about the product",
+          "items": {
+            "type": "string",
+            "description": "URLs referring to the product"
           }
         }
       },
